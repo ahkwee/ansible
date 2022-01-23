@@ -1,0 +1,13 @@
+---
+- name: Uninstall RabbitMQ on a local host
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  vars: 
+      rabbitMQ_pkg1: "rabbitmq-server"
+   
+  tasks:
+   - name: remove RabbitMQ
+     shell: apt remove {{ rabbitMQ_pkg1 }} -y -q
+ 
+ 
