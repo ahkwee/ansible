@@ -1,0 +1,19 @@
+---
+- name: install MySQL on a local host
+  hosts: 10.34.67.196
+  gather_facts: no
+  become: yes
+  vars: 
+      mysql_pkg1: "mysql-server"
+   
+  tasks:
+   - name: install MySQL sudo apt install mysql-server
+     shell: apt install {{ mysql_pkg1 }} -y -q
+
+# sudo  service mysql status|start|stop  after installation
+# sudo mysql -u root to logon to mysql server
+# mysql> SHOW DATABASES; SHOW TABLES;
+# mysql> USE MYSQL;
+# mysql> DESC <table>;
+# mysql> select count(*) from <TABLE>
+  
