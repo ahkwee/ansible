@@ -1,0 +1,49 @@
+---
+- name: install erLang Pre-requiste on a local host
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  vars: 
+      erlang_common: "software-properties-common apt-transport-https"
+      erlang_repo: "https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc"
+      erlang_test: "https://packages.erlang-solutions.com/ubuntu focal contrib"
+      erlang_package: "erlang"
+
+  tasks:
+   - name: install erLang pre-requiste steps
+     shell: apt install {{erlang_common}}
+   - name: download erlang package to the local repo
+     shell: wget -O- {{ erlang_repo }} | sudo apt-key add -
+   - name: erlang verification
+     shell: echo "deb {{ erlang_test }} " | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+   - name: install erlang package
+     shell: apt install {{ erlang_package }} -y -q
+
+- name: install rabbitMQ on a local host
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  vars: 
+      rabbitMQ_repo: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.deb.sh
+      rabbitMQ_server: "mysql-server"
+  tasks:
+   - name: download rabbitMQ package to the local repo
+     shell: curl -s {{ rabbitMQ_repo }} | sudo bash
+   - name: install RabbitMQ server 
+     shell: apt install {{ rabbitMQ_server }} -y -q  
+   - name: rabbitMQ verification
+     shell: service rabbitmq-server status
+
+
+
+#Install Erlang packages before installing RabbitMQ
+#sudo apt update
+#sudo apt install software-properties-common apt-transport-https
+#wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo apt-key add -
+#echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+#sudo apt install erlang
+
+#Install RabbitMQ
+#curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.deb.sh | sudo bash
+# sudo apt install rabbitmq-server
+# sudo service  rabbitmq-server status
