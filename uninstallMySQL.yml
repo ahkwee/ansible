@@ -1,0 +1,25 @@
+---
+- name: Uninstall MySQL on a local host
+  hosts: 10.34.67.196
+  gather_facts: no
+  become: yes
+  vars: 
+      mysql_pkg1: "mysql-server-core-8.0"
+      mysql_pkg2: "mysql-server-8.0"
+      mysql_pkg3: "mysql-common"
+      mysql_pkg4: "mysql-client-core-8.0"
+      mysql_pkg5: "mysql-client-8.0"
+      mysql_pkg6: "mysql-server"
+  tasks:
+   - name: remove 1
+     shell: apt remove {{ mysql_pkg1 }} -y -q
+   - name: remove 2
+     shell: apt remove {{ mysql_pkg2 }} -y -q
+   - name: remove 3
+     shell: apt remove {{ mysql_pkg3 }} -y -q
+   - name: remove 4
+     shell: apt remove {{ mysql_pkg4 }} -y -q
+   - name:  remove 5
+     shell: apt remove {{ mysql_pkg5 }} -y -q
+   - name: remove 6
+     shell: apt remove {{ mysql_pkg6 }} -y -q
