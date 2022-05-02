@@ -1,0 +1,9 @@
+---
+ - name: Stop windows services
+   hosts: all
+   gather_facts: false
+   tasks:
+    - name: stop a windows services
+      win_service:
+       name: W3SVC
+       state: stopped

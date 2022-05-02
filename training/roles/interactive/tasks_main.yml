@@ -1,0 +1,5 @@
+---
+ - name: templates/std_pzb.j2
+   template:
+              src: templates/std_pzb.j2
+              dest: d:\apps\login\std_pzb.j2

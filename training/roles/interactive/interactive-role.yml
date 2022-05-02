@@ -1,0 +1,5 @@
+---
+- name: interactive role playbook
+  hosts: 10.44.240.245
+  roles:
+   - role: interactive 

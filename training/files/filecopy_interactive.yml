@@ -1,0 +1,13 @@
+---
+- name: copy a interactive and response files from source(linux) to Windows
+  hosts: 10.44.241.171, 10.44.240.245
+  gather_facts: false
+  tasks:
+   - name: copy interactive exe file
+     win_copy:
+       src: /tmp/interactive/Facets_Interactive_5.80.003.000.exe
+       dest: D:\tools\Facets_Interactive_5.80.003.000.exe
+   - name:  copy interactive response file
+     win_copy:
+       src: /tmp/interactive/fi.iss
+       dest: D:\tools\fi.iss

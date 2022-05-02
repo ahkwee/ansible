@@ -1,0 +1,5 @@
+---
+# facets batch component
+ - name: install batch
+   debug:
+     msg: "Hipaa - batch"

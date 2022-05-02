@@ -1,0 +1,6 @@
+---
+ - name: install facets thg via response file
+ - import_tasks: install_batch.yml
+ - import_tasks: install_wsl.yml
+ - import_tasks: install_webapps.yml
+ - import_tasks: install_interactive

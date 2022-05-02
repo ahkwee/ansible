@@ -1,0 +1,8 @@
+---
+interactive:
+       version: Facet58_R4_IR10
+       major: Facets58_R4
+       minor: Facets58_IR10
+       oneoff: Facet58_Oneoff
+       component: console
+       

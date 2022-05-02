@@ -1,0 +1,8 @@
+---
+ - name: install facets wsl via response file
+   #hosts: 10.44.240.245
+   hosts: 10.44.241.174
+   gather_facts: false
+   tasks:
+    - name: install facets wsl component
+      win_shell: d:\tools\Facets_WebServiceLibrary_5.70.004.002.exe -s -f1d:\tools\wsl.iss -f2d:\tools\wsl.log

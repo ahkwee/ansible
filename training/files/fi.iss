@@ -1,0 +1,60 @@
+[InstallShield Silent]
+Version=v7.00
+File=Response File
+[File Transfer]
+OverwrittenReadOnly=NoToAll
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-DlgOrder]
+Dlg0={87C2CF75-3289-4595-A396-9A950B579C3F}-SdWelcome-0
+Count=11
+Dlg1={87C2CF75-3289-4595-A396-9A950B579C3F}-SdLicense-0
+Dlg2={87C2CF75-3289-4595-A396-9A950B579C3F}-SdRegisterUser-0
+Dlg3={87C2CF75-3289-4595-A396-9A950B579C3F}-SdSetupType-0
+Dlg4={87C2CF75-3289-4595-A396-9A950B579C3F}-BrowseToFile-0
+Dlg5={87C2CF75-3289-4595-A396-9A950B579C3F}-GetTzxLicense-0
+Dlg6={87C2CF75-3289-4595-A396-9A950B579C3F}-AskOptions-0
+Dlg7={87C2CF75-3289-4595-A396-9A950B579C3F}-SdShowDlgEdit2-0
+Dlg8={87C2CF75-3289-4595-A396-9A950B579C3F}-SdAskDestPath-0
+Dlg9={87C2CF75-3289-4595-A396-9A950B579C3F}-SdStartCopy-0
+Dlg10={87C2CF75-3289-4595-A396-9A950B579C3F}-SdFinish-0
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdWelcome-0]
+Result=1
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdLicense-0]
+Result=1
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdRegisterUser-0]
+szName=tan
+szCompany=bsc
+Result=1
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdSetupType-0]
+szDir=C:\Program Files (x86)\TriZetto\Facets
+Result=303
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-BrowseToFile-0]
+Result=0
+LicenseFileName=D:\Tools\BlueShieldofCaliforniaLicense.xml
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-GetTzxLicense-0]
+Result=0
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-AskOptions-0]
+Result=1
+Sel-0=0
+Sel-1=0
+Sel-2=0
+Sel-3=0
+Sel-4=1
+Sel-5=0
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdShowDlgEdit2-0]
+szEdit1=testdb
+szEdit2=facets
+Result=1
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdAskDestPath-0]
+szDir=D:\apps\facets_ansible
+Result=1
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdStartCopy-0]
+Result=1
+[Application]
+Name=Facets Interactive
+Version=5.80.003.000
+Company=Cognizant TriZetto Software Group, Inc.
+Lang=0409
+[{87C2CF75-3289-4595-A396-9A950B579C3F}-SdFinish-0]
+Result=1
+bOpt1=0
+bOpt2=0

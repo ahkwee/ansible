@@ -1,0 +1,29 @@
+---
+ - name: Block execise - create a non-existent file and directory
+   hosts: 10.44.240.245
+   gather_facts: false
+   vars: 
+    mode: "yes"
+   tasks:
+
+    - block:
+      - name: look for an non-existent diretory
+        win_shell: dir d:/tan
+      
+      - name: look for an nonexitent file
+        win_shell: dir d:/temp/abc.txt
+
+      rescue:
+       - name: perform diretory manipulation
+         debug:
+           msg: "directory not found: create a new directory"
+
+       - name: perform files manipulation
+         debug:
+           msg: "file not found: create a new file"
+
+    - name: install Tomme
+      debug:
+        msg: "Install Tomme -- {{ mode }}"
+        
+

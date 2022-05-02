@@ -1,0 +1,7 @@
+---
+ - name: uninstall  rabbitMQ - pre-requiste
+   hosts: 10.44.241.171
+   gather_facts: false
+   tasks:
+    - name: uninstall Erlang
+      win_shell: Choco uninstall rabbitmq --force --yes

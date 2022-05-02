@@ -1,0 +1,12 @@
+---
+ - name: host vars exercise
+   hosts: citrix2
+   gather_facts: false
+   # playbook variables overrides host_vars
+   # vars:
+   #  port: 3000
+   #  pkg: unknown
+   tasks:
+     - name: display port and pkg values from host_vars directory
+       debug:
+         msg: The info is port {{ port }} and {{ pkg }}

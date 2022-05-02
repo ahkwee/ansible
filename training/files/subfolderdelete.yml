@@ -1,0 +1,9 @@
+---
+- name: delete a subfolder under c:\temp
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: delete a subfolder
+     win_file:
+       path: c:\temp\myfolder
+       state: absent

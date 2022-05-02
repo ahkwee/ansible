@@ -1,0 +1,9 @@
+---
+- name: copy a file from source(linux) to Windows
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: copy a file
+     win_copy:
+       src: /tmp/hello.txt
+       dest: c:\temp\hello.txt

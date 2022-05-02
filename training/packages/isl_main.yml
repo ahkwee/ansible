@@ -1,0 +1,4 @@
+---
+ - name: install facets isl via response file
+ - import_tasks: install_batch.yml
+ - import_tasks: install_wsl.yml

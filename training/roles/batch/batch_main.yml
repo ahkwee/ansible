@@ -1,0 +1,4 @@
+---
+ - name: install facets batch via response file
+ - import_tasks: install_batch.yml
+

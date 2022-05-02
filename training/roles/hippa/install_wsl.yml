@@ -1,0 +1,5 @@
+---
+# facets batch component
+ - name: install wsl
+   debug:
+     msg: "Hipaa - wsl"

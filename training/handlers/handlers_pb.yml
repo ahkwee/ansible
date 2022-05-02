@@ -1,0 +1,30 @@
+---
+ - name: handler execise - 
+   hosts: 10.44.240.245
+   gather_facts: false
+   vars:
+     mode: 1
+   tasks: 
+    - name: stopp WWW services
+      win_service:
+       name: W3SVC
+       state: stopped
+      tags: stopWWW
+      notify: stop_service
+
+    - name: starts WWW services
+      win_service:
+       name: W3SVC
+       state: started
+      tags: startwww
+      notify: start_service
+
+   handlers:
+     - name: start_service
+       debug: 
+         msg: "catch: start service"
+
+     - name: stop_service
+       debug:
+         msg: "catch: stop service"
+       

@@ -1,0 +1,5 @@
+---
+ - name: install Facets ISL components
+   hosts: 10.44.241.174
+   roles:
+    - role: isl

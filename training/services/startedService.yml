@@ -1,0 +1,11 @@
+---
+ - name: start a windows service
+   hosts: all
+   gather_facts: false
+   tasks:
+    - name: start a windows service
+      win_service:
+       name: W3SVC
+       state: started
+
+ 

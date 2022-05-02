@@ -1,0 +1,16 @@
+---
+ - name: templates tutorial
+   hosts: 10.44.240.245
+   gather_facts: false
+   vars_files: ~/training/templates/fi_templates_data.yml
+   tasks:
+    - name: install oracle jdk 8.0
+      debug:
+       msg: "Install jdk software"
+    - name: install tomee 8.x
+      debug:
+       msg: "Install tomee application server"
+    - name: Template tests
+      template:
+        src: ~/training/templates/fi_templates.j2
+        dest: d:\temp\fi_transformation.txt

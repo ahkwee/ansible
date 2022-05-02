@@ -1,0 +1,9 @@
+---
+ - name: install facets interactive via response file
+   #hosts: 10.44.240.245
+   hosts: 10.44.241.171, 10.44.240.245
+   gather_facts: false
+   tasks:
+    - name: install facets interactive
+      win_shell: D:\tools\Facets_Interactive_5.80.003.000.exe -s -f1d:\tools\fi.iss
+ 

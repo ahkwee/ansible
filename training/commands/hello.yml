@@ -1,0 +1,9 @@
+---
+ - name: Stop windows services
+   hosts: 10.44.241.171
+   gather_facts: false
+   tasks:
+    - name: run a powershell hello script
+      #win_command: cmd.exe C:\temp\helloworld.bat >> c:\temp\hellocmd.log
+      win_shell: C:\temp\helloworld.ps1 >> c:\temp\hellops.log
+      

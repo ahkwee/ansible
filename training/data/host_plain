@@ -1,0 +1,134 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+#wapp2571n.dev.bscal.local
+#wapp2572n.dev.bscal.local
+#wapp2573n.dev.bscal.local
+#wapp2574n.dev.bscal.local
+
+citrix1 ansible_host=10.44.240.245 
+citrix2 ansible_host=10.44.241.171
+batch1  ansible_host=10.44.241.172
+batch2  ansible_host=10.44.240.246
+
+[standalone_citrix]
+citrix1
+citrix2
+
+[standalone_citrix:vars]
+ansible_connection=winrm 
+ansible_port=5986 
+ansible_winrm_server_cert_validation=ignore 
+ansible_winrm_transport=credssp 
+ansible_user=dev\admatan01 
+ansible_password=Poameiri21!@
+
+[standalone_batch]
+batch1
+batch2
+
+[standalone_batch:vars]
+ansible_connection=winrm 
+ansible_port=5986 
+ansible_winrm_server_cert_validation=ignore 
+ansible_winrm_transport=credssp 
+ansible_user=dev\admatan01 
+ansible_password=Poameiri21!@
+
+
+[win]
+10.44.240.245
+10.44.241.171
+10.44.241.172
+10.44.240.246
+10.44.241.173
+10.34.243.166
+10.44.241.174
+
+
+[win:vars]
+ansible_connection=winrm
+ansible_port=5986
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=credssp
+ansible_user=dev\admatan01
+ansible_password=Poameiri21!@
+
+[interactive]
+10.44.241.171
+
+[interactive:vars]
+type=interactive
+version=5.8_R4_IR10
+
+[batch]
+10.44.241.172
+
+[batch:vars]
+type=batch
+version=5.8_R4_IR10
+
+[isl]
+10.44.241.173
+
+[isl:vars]
+type=isl
+version=5.8_R4_IR10
+
+[hipaa]
+10.44.240.246
+
+[hipaa:vars]
+type=interactive
+version=5.8_R4_IR10
+
+[nwkwkfgps]
+10.44.240.246
+10.34.243.166
+
+[nwkwkfgps:vars]
+type=interactive
+version=5.8_R4_IR10
+
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+#green.example.com
+#blue.example.com
+#192.168.100.1
+#192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+#[webservers]
+#alpha.example.org
+#beta.example.org
+#192.168.1.100
+#192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+#www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+#[dbservers]
+#
+#db01.intranet.mydomain.net
+#db02.intranet.mydomain.net
+#10.25.1.56
+#10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+#db-[99:101]-node.example.com
+

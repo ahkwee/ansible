@@ -1,0 +1,17 @@
+---
+ - name: File variables
+   hosts: all
+   vars:
+    firstname: Jack
+   vars_files: cityvar.yml
+   tasks: 
+   - name : display personal info
+     debug:
+       msg: 
+         - "Last name Name: {{ lastname }}"
+         - "City: {{ address }}"
+         - "Apt: {{ apt }} "
+         - "State: {{ state }}"
+         - "Zipcode: {{ zipcode }}"
+         - "Group Roles: {{ approles }}"
+         

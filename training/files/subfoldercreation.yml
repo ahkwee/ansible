@@ -1,0 +1,9 @@
+---
+- name: create a subfolder under c:\temp
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: create a subfolder
+     win_file:
+       path: c:\temp\myfolder
+       state: directory

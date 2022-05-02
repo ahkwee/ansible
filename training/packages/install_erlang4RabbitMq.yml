@@ -1,0 +1,8 @@
+---
+ - name: install Erlang  for rabbitMQ - pre-requiste
+   hosts: 10.44.241.171
+   gather_facts: false
+   tasks:
+    - name: install Erlang - take 3-5 mins to install
+      win_shell: Choco install erlang --force --yes
+ 

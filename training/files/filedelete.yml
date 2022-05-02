@@ -1,0 +1,9 @@
+---
+- name: remove a file 
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: remove a file
+     win_file:
+       path: c:\temp\hello.txt
+       state: absent    

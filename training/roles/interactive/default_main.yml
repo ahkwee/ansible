@@ -1,0 +1,5 @@
+---
+environment: fach72
+datapower_url: https://esbh01dp:8642
+datapower_dataservice_url: https://esbh01dp:8640
+accum_url: https://accum-rlt01.dev.bscal.local:443

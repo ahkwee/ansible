@@ -1,0 +1,9 @@
+---
+ - name: Tutorial 1
+   hosts: all
+   tasks: 
+   - name: T1-Task 1
+     debug:
+       msg:1
+       - "Hello World"
+

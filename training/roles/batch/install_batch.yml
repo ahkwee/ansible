@@ -1,0 +1,4 @@
+---
+# facets batch component
+ - name: install batch
+   win_shell: D:\tools\Facets_AppServer_5.70.004.000.exe -s -f1d:\tools\fap.iss

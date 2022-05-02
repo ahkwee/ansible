@@ -1,0 +1,30 @@
+---
+# single tag:    ansible-playbook -i ../data/hosts --ask-vault-pass tagged_pb.yml --tags batch
+# multiple tags: ansible-playbook -i ../data/hosts --ask-vault-pass tagged_pb.yml --tags batch,isl
+ - name: Tagged exercise
+   hosts: 10.44.240.245
+   gather_facts: false
+   vars:
+    facets_version: 5.8_R4_IR10
+   tasks:
+    - name: Install Oracle
+      debug: 
+        msg: "Install Oracle 8.x"
+      tags: Oracle
+
+    - name: Install Interactive
+      debug: 
+        msg: "Install Facets Interactive {{ facets_version }}"
+      tags: interactive
+
+    - name: Install Batch
+      debug: 
+        msg: "Install Facets Batch {{ facets_version }}"
+      tags: batch
+
+    - name: Install Isl
+      debug: 
+        msg: "Install Facets ISL {{ facets_version }}"
+      tags: isl
+      
+

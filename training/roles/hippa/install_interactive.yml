@@ -1,0 +1,5 @@
+---
+# facets batch component
+ - name: install interactive
+   debug:
+     msg: "Hipaa - interactive"

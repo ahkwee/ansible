@@ -1,0 +1,18 @@
+---
+ - name: group vars exercise
+   hosts: batch
+   gather_facts: false
+   # playbook variables overrides groups_vars
+   # vars:
+   #  port: 3000
+   #  pkg: unknown
+   #  MUST have playbook in the same level as of hostvars / groupvars
+  # vars:
+  #   approles: batch_Isl
+   tasks:
+     - name: display port and pkg values from host_vars directory
+       debug:
+         msg: The application role is -  {{ approles }}
+     - name: display playbook
+       debug:
+         msg: The application role is - {{ approles }}
