@@ -1,0 +1,12 @@
+Tues, May/05/2022
+Relearn how git work
+
+git clone https://github.com/ahkwee/ansible.git
+git status
+git add .
+git commit -m "add a play comment"
+git push -u origin main
+
+have not yet to find out
+how to switch from branch to main and vice-versa
+how to merge branch to master
