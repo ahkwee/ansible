@@ -10,3 +10,13 @@ git push -u origin main
 have not yet to find out
 how to switch from branch to main and vice-versa
 how to merge branch to master
+
+
+know how to switch from a branch to main by
+git status
+git checkout < branchname>
+
+git status
+git checkout < main>
+
+important to issue "git status" to find out which brain we are on
