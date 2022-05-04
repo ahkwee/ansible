@@ -16,9 +16,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  FACH72_CP:
     # The type of runner that the job will run on
     runs-on: windows-2019
+    environment: FACH72_CP
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,23 +27,35 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Run in a FACH72 CHange Pack environment script
+        run:  echo Run in Fach72 Change Pack environment
         
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: installed pre-requisitee script
         run: echo install pre-requiste
         
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo install ibm mq
-        
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo install oracle client
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+  FACH71_Rel:
+    # The type of runner that the job will run on
+      runs-on: windows-2019
+      environment: FACH72_CP
+      
+      steps:
+         - uses: actions/checkout@v3
+         - name:  Run in  a FACH71 Release  environment script
+           run: echo run fach71
+         
+         - name: install pre-requiste
+           run : echo install pre-requisite in fach71 release 
+           
+  FACH90_Brix:
+    # The type of runner that the job will run on
+      runs-on: windows-2019
+      environment: FACH71_Rel
+      
+      steps:
+         - uses: actions/checkout@v3
+         - name:  Run in  a FACH90 Breakfix  environment script
+           run: echo run fach90 
+         
+         - name: install pre-requiste
+           run : echo install pre-requisite in fach90 breakfix.
