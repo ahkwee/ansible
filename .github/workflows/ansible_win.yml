@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Tan's First CI/CD playground - mocked Facets Interactive
 
 # Controls when the workflow will run
 on:
@@ -31,8 +31,24 @@ jobs:
         run:  echo Run in Fach72 Change Pack environment
         
       # Runs a single command using the runners shell
-      - name: installed pre-requisitee script
+      - name: install pre-requisitee script
         run: echo install pre-requiste
+        
+      # Runs a single command using the runners shell
+      - name: install IBM MQ client script
+        run: echo install MQ Client
+        
+      # Runs a single command using the runners shell
+      - name: install ORACLE client script
+        run: echo install pre-requiste
+        
+      # Runs a single command using the runners shell
+      - name: install Facets Interactive script
+        run: echo install facets interactive pre-requiste
+        
+      # Runs a single command using the runners shell
+      - name: install Melisa Data script
+        run: echo install MD software
         
   FACH71_Rel:
     # The type of runner that the job will run on
@@ -46,8 +62,20 @@ jobs:
            run: echo run fach71
          
          - name: install pre-requiste
-           run : echo install pre-requisite in fach71 release 
+           run : echo install pre-requisite in fach71 release
            
+         - name: install IBM MQ Client
+           run: echo install IBM MQ client
+           
+         - name: install Oracle client
+           run: echo install Oracle client
+           
+         - name: install Facets interactive
+           run: echo install Facets Interactive
+            
+         - name: install Melisa Data
+           run: echo install MD
+        
   FACH90_Brix:
     # The type of runner that the job will run on
       runs-on: windows-2019
@@ -61,3 +89,15 @@ jobs:
          
          - name: install pre-requiste
            run : echo install pre-requisite in fach90 breakfix.
+           
+         - name: install IBM MQ client
+           run : echo install IBM MQ in fach90 breakfix.
+           
+         - name: install Oracle Client
+           run : echo install Oracle client in fach90 breakfix.
+           
+         - name: install Facets Interactive
+           run : echo install Facets interactive  in fach90 breakfix.
+           
+         - name: install Melisa Data
+           run : echo install MD in fach90 breakfix.
