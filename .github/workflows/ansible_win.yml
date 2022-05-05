@@ -37,7 +37,8 @@ jobs:
   FACH71_Rel:
     # The type of runner that the job will run on
       runs-on: windows-2019
-      environment: FACH72_CP
+      environment: FACH71_Rel
+      needs: FACH72_CP
       
       steps:
          - uses: actions/checkout@v3
@@ -50,7 +51,8 @@ jobs:
   FACH90_Brix:
     # The type of runner that the job will run on
       runs-on: windows-2019
-      environment: FACH71_Rel
+      environment: FACH90_Brix
+      needs: FACH71_Rel
       
       steps:
          - uses: actions/checkout@v3
