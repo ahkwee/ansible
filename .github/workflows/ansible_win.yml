@@ -42,7 +42,7 @@ jobs:
       - name: install ORACLE client script
         run: echo install pre-requiste
         
-      # Runs a single command using the runners shell
+      # Runs a single command using the runners shel
       - name: install Facets Interactive script
         run: echo install facets interactive pre-requiste
         
